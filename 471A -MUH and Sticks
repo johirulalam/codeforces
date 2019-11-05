@@ -1,0 +1,61 @@
+#include<stdio.h>
+int main()
+{
+    int ar[6];
+    int i,j,counts,m,a,b;
+    for(i=0;i<6;i++)
+    {
+        scanf("%d",&ar[i]);
+    }
+    for(i=0;i<6;i++)
+    {
+        counts=0;
+        m=0;
+        for(j=0;j<6;j++)
+        {
+            if(ar[i]==ar[j])
+            {
+                counts++;
+            }
+            else
+            {
+                if(m==0)
+                {
+                    b=ar[j];
+                }
+                else
+                {
+                    a=ar[j];
+                }
+
+                m++;
+            }
+
+        }
+        if(counts>=4)
+        {
+            break;
+        }
+
+    }
+
+    if(counts>=4)
+    {
+        if(a==b || counts>=6)
+        {
+            printf("Elephant\n");
+        }
+        else
+        {
+            printf("Bear\n");
+        }
+
+    }
+    else
+    {
+        printf("Alien\n");
+    }
+
+
+    return 0;
+}
