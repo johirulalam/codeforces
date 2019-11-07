@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main()
+{
+    int k,n,i,j,d,a,b,counts;
+    int A[1000];
+    scanf("%d",&k);
+    for(i=0;i<k;i++)
+    {
+ 
+        scanf("%d",&n);
+        counts=0;
+        for(j=0;j<n;j++)
+        {
+            scanf("%d",&A[j]);
+        }
+        d=n;
+ 
+        for(a=0;a<n;a++)
+        {
+ 
+ 
+            for(b=0;b<n;b++)
+            {
+ 
+                if(A[b]==d && d>counts )
+                {
+                    counts++;
+                }
+                if(d<counts)
+                {
+                    break;
+                }
+ 
+            }
+            d--;
+        }
+        printf("%d\n",counts);
+    }
+ 
+    return 0;
+}
